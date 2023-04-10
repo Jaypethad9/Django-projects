@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} Shop {% endblock title %}
+{% block body %}
+<div class="container-fluid">
+    <center><img src="static\pics\order.jpg" class="img-fluid" alt="Responsive image"></center>
+</div>
+<div class="container">
+    <div class="container  py-4">
+        <h1 class="text-center"></h1>
+    </div>
+<div class="container" style="max-width: 550px; pytho">
+<form method="POST" action="shop">
+    {% csrf_token %}
+    <div class="mb-3" >
+        <label for="exampleFormControlTextarea1" class="form-label">Enter your full adderss here</label>
+        <textarea type="desc" class="form-control" id="desc" name="desc" placeholder="Address  " rows="2"></textarea>
+    </div>
+    <div class="my-3">
+        <div class="form-check">
+          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="" data-dashlane-rid="f2782d63a8bc6dfa" data-form-type="payment,type" data-kwimpalastatus="dead" data-dashlane-filled-by-user="true" value="Creditcard">
+          <label class="form-check-label" for="credit">Credit card</label>
+        </div>
+        <div class="form-check">
+          <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="" data-dashlane-rid="27c164e578d4dc4b" data-form-type="payment,type" data-kwimpalastatus="dead" data-dashlane-filled-by-user="true" value="Debitcard">
+          <label class="form-check-label" for="debit">Debit card</label>
+        </div>
+        <div class="form-check">
+          <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="" data-dashlane-rid="0b9d31cb68953f2f" data-form-type="payment,type" data-kwimpalastatus="dead" data-dashlane-filled-by-user="true" value="Onlinepayment">
+          <label class="form-check-label" for="paypal">Online payment</label>
+        </div>
+        <div class="form-check">
+            <input id="cash" name="paymentMethod" type="radio" class="form-check-input" required="" data-dashlane-rid="0b9d31cb68953f2f" data-form-type="payment,type" data-kwimpalastatus="dead" data-dashlane-filled-by-user="true" value="cod">
+            <label class="form-check-label" for="paypal">Cash on deleviry</label>
+        </div>
+      </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Enter your name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Full name">
+    </div>
+    <div class="mb-3">
+        <label for="contact" class="form-label">Enter your contact number</label>
+        <input type="number" class="form-control" id="contact" name="phone" placeholder="Phone number">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" >
+    </div>
+    
+    <button style= "margin-bottom:30px " type="submit" class="btn btn-primary">CONFIRM YOUR ORDER</button>
+</form>
+</div>
+{% endblock body %}

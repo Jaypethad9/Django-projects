@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} login{% endblock title %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<div class="container" style="max-width: 550px; margin: 0 auto;">
+<main class="form-signin w-100 m-auto">
+    <div class="container">
+    <form action="login" method="POST">
+      {% csrf_token %}
+      <center><img src="static\pics\user.png" class="" alt="Responsive image"  height="200"></center>
+    <div class="mb-2">
+        <label for="username" class="form-label">Enter your username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Full name">
+    </div>
+    <div class="mb-2 py-1">
+      <label for="password" class="form-label">Enter password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </main>
+<center>
+  <div class="container">
+    <p >
+      <a href="register">I don't have an account</a>
+    </p>
+  </div>
+  </center>
+{% endblock body %}

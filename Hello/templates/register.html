@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock title %}
+{% block body %}
+<div class="container" style="max-width: 550px; margin: 0 auto;"> 
+<form action="register" method="POST">
+
+  {% csrf_token %}
+  <center><img src="static\pics\register.jpg" class="img-fluid" alt="Responsive image"></center>
+<div class="container my-2">
+<div class="mb-2">
+    <label for="first_name" class="form-label">Enter your first name</label>
+    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Full name">
+</div>
+<div class="mb-2">
+    <label for="last_name" class="form-label">Enter your last name</label>
+    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Full name">
+</div>
+<div class="mb-2">
+    <label for="username" class="form-label">Enter your username</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Full name">
+</div>
+<div class="mb-2">
+<label for="email" class="form-label">Enter your email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email" >
+  </div>
+  <div class="mb-2 py-1">
+  <label for="password1" class="form-label">Enter password</label>
+  <input type="password" class="form-control" id="password1" name="password1" placeholder="password">
+</div>
+<div class="mb-2 py-1">
+  <label for="password2" class="form-label">Enter password</label>
+  <input type="password" class="form-control" id="password2" name="password2" placeholder="Re-type password">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+</body>
+<center>
+<div class="container">
+  <p >
+    <a href="login">I already have an account</a>
+  </p>
+</div>
+</center>
+{% endblock body %}
